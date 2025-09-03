@@ -29,7 +29,7 @@ This chatbot helps with **budgeting, investments, savings, and expense analysis*
 ## ⚙️ Setup
 ```bash
 # Clone repo
-git clone https://github.com/your-username/finance-chatbot.git
+git clone https://github.com/tejaveer/finance-chatbot.git
 cd finance-chatbot
 
 # Install dependencies
