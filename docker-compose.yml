@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  finance-chatbot:
+    build: .
+    container_name: finance-chatbot
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ENABLECORS=false
+      - STREAMLIT_SERVER_ENABLEXSRSFPROTECTION=false
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:
